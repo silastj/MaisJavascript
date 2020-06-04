@@ -121,3 +121,91 @@ function handleClick(event){
 }
 
 btns.on('click', handleClick);
+
+
+//DEBUGGER PELO NAVEGADOR OU PELO CODIGO AQUI
+//COLOCAR O DEBUGGER ANTES DE INICIAR O CODIGO
+// debugger
+
+
+
+// DESTRUCTURING
+
+const carro = {
+    empresa: 'Fiat',
+    ano: 2018,
+    portas: 4,
+}
+
+const {empresa, ano} = carro;
+
+console.log(empresa);
+console.log(ano);
+console.log(empresa, ano)
+
+//MAIS UM EXEMPLO
+
+const cliente = {
+    nome: "Silas",
+    compras: {
+        digitais:{
+            livros: ['Livro 1', 'Livro 2'],
+            videos: ['Video JS', 'Video HTML']
+        },
+        fisicas: {
+            cadernos: ['Caderno 1']
+        }
+      }
+    }
+
+//MODO ANTIGO
+    // console.log(cliente.compras.digitais.livros);
+    // console.log(cliente.compras.digitais.videos);
+    
+//MODO NOVO criando constant
+    // const{livros, videos} = cliente.compras.digitais;
+    // console.log(livros);
+    // console.log(videos);
+
+//DESAGRUPANDO MAIS E MAIS
+const {digitais, fisicas, digitais: { livros, videos}} = cliente.compras;
+console.log(digitais);
+console.log(fisicas);
+console.log(livros);
+console.log(videos);
+
+//MUDANDO O NOME DA VARIAVEL
+const{nome: apelido} = cliente;
+console.log(apelido);
+
+//PODEMOS COLOCAR VARIAVEIS E VALORES
+const{idade = '19 anos'} = cliente;
+console.log(idade);
+
+//DESESTRUTURAR ARRAYS
+const frutas = ['Banana', 'Maça', 'Morango'];
+
+const OneFruta = frutas[0];
+const TwoFruta = frutas[1];
+const ThreeFrutas = frutas[2];
+
+// MODO DESESTRUTURAR
+const [One, Two, Three] = frutas;
+console.log(One);
+console.log(Two);
+console.log(Three);
+
+//DESESTRUTURAR UM METODO
+function handleKeyBoard(event){
+    console.log(event.key);
+}
+
+//ESSE SERIA A DESESTRUTURAÇÃO
+//já estou passando o evento que eu quero o key 
+function handleKeyBoard2({key, keyCode}){
+    console.log(key, keyCode);
+}
+
+
+document.addEventListener('keyup', handleKeyBoard);
+document.addEventListener('keyup', handleKeyBoard2);
