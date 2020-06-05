@@ -209,3 +209,28 @@ function handleKeyBoard2({key, keyCode}){
 
 document.addEventListener('keyup', handleKeyBoard);
 document.addEventListener('keyup', handleKeyBoard2);
+
+
+const comprar = document.querySelector('.comprar');
+const resComprar = getComputedStyle(comprar);
+
+console.log(resComprar.backgroundColor);
+
+const {backgroundColor, margin, color} = resComprar;
+
+console.log(backgroundColor);
+console.log(margin);
+console.log(color);
+
+//MUDANDO DE VALORES
+
+let cursoA = 'Javascript';
+let cursoB = 'HTML';
+
+[cursoA, cursoB] = [cursoB, cursoA];
+
+console.log('cursoA:' + cursoA);
+console.log('cursoB:' + cursoB);
+
+// temos como mudar tambem o nome da variavel
+//aula 804 javascript
