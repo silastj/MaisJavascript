@@ -63,3 +63,70 @@ console.log(btnsArray);
 //NOVO METODO
 const btn = [...button];
 console.log(btn);
+
+//LOOPS INTERABLE - IGUAL O FOREACH É O FOR OF
+const feiras = ['Banana', 'Maça', 'Melão'];
+const frase = 'Isso é Javascript';
+
+for(const feira of feiras){
+    console.log(feira);
+}
+
+for(const char of frase){
+    console.log(char);
+}
+
+// fetch('https://pokeapi.co/api/v2/pokemon/')
+// .then(response => console.log(response));
+
+//COM ESSE METODO ABAIXO ELE CONSEGUE DAR UM CONSOLE .LOG EM CADA UM BOTÃO
+const btnsA = document.querySelectorAll('button');
+
+for(const btA of btnsA){
+    btA.style.color = "blue";
+}
+
+console.log(...btnsA);
+//COM ESSE METODO ACIMA ELE CONSEGUE DAR UM CONSOLE .LOG EM CADA UM BOTÃO
+
+//FOR IN ELE FAZ O LOOP EM OBJETOS NAO ITERABLE - MAS ELE TRAZ A CHAVE COMO  RETORNO
+// TB CONSEGUIMOS TRAZER O VALUE DE CADA CHAVE
+// ELE SÓ TRAZ TODO O OBJETO SE TIVER O ENUMERABLE= TRUE
+
+
+const notebook = {
+    marca: 'DELL',
+    ano: '2020',
+}
+
+Object.defineProperties(notebook, {
+
+    memoria: {
+        value:4,
+        enumerable: true,
+    }
+})
+
+for(const note in notebook){
+    console.log(note, notebook[note])
+}
+
+//MOSTRANDO TODAS AS PROPRIEDADES DOS BOTOES
+const bb = document.querySelector('button');
+const bbStyle = getComputedStyle(bb);
+
+
+for(const style in bbStyle){
+    console.log(`${style}: ${bbStyle[style]}`);
+}
+
+//INCLUIR CADA LI UMA CLASS
+const items = document.querySelectorAll('li');
+
+for(const item of items) {
+    item.classList.add('ativo')
+}
+
+
+
+
